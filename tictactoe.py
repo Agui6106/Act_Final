@@ -1,6 +1,6 @@
 from turtle import \
     (onscreenclick, setup, hideturtle, tracer, update,
-        done, up, goto, down, circle)
+        done, up, goto, down, circle, color)
 
 from freegames import line
 
@@ -15,16 +15,18 @@ def grid():
 
 def drawx(x, y):
     """Draw the X player symbol."""
-    line(x, y, x + 133, y + 133)
-    line(x, y + 133, x + 133, y)
+    color('red')
+    line(x + 38, y + 36, x + 98, y + 96)
+    line(x + 38, y + 96, x + 98, y + 36)
 
 
 def drawo(x, y):
     """Draw the O player sybol."""
+    color('blue')
     up()
-    goto(x + 67, y + 5)
+    goto(x + 67, y + 15)
     down()
-    circle(62)
+    circle(50)
 
 
 def floor(value):
