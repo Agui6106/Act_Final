@@ -4,6 +4,9 @@ from turtle import \
 
 from freegames import line
 
+"""Keep track of which boxes are occupied."""
+occupied_boxes = [[False] * 3 for _ in range(3)]
+
 
 def grid():
     """Draws the tic-tac-toe grid."""
@@ -11,6 +14,20 @@ def grid():
     line(67, 200, 67, -200)
     line(-200, -67, 200, -67)
     line(-200, 67, 200, 67)
+
+
+def mark_box(x, y):
+    """Mark the box at the given coordinates."""
+    col = int((x + 200) // 133)  # Convert the x coordinate to the grid index
+    row = int((y + 200) // 133)  # Convert the y coordinate to the grid index
+    occupied_boxes[row][col] = True
+
+
+def is_box_occupied(x, y):
+    """Check if the box at the given coordinates is occupied."""
+    col = int((x + 200) // 133)
+    row = int((y + 200) // 133)
+    return occupied_boxes[row][col]
 
 
 def drawx(x, y):
@@ -40,8 +57,12 @@ players = [drawx, drawo]
 
 def tap(x, y):
     """Draw X or O in tapped square."""
-    x = floor(x)
-    y = floor(y)
+    x = int(floor(x))
+    y = int(floor(y))
+    """Check if the box is already occupied."""
+    if is_box_occupied(x, y):
+        return
+    mark_box(x, y)
     player = state['player']  # Determine which player's turn it is
     draw = players[player]  # Get the drawing function for the player
     draw(x, y)
