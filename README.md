@@ -1,17 +1,18 @@
-# Act_Final
+## Act_Final
 
 ## Pacman 
-    * Desarollador: Jose Alberto Aguilar Sanchez
-    * Matricula: A01735612
+    * Developer: Jose Alberto Aguilar Sanchez
+    * Registration: A01735612
 
-## Modificaciones realizadas
-    * Se cambio la forma del laberinto
-    * Se cambio la velocidad de los fantasmas y jugador
+## Modifications made
+    * Changed the shape of the maze
+    * Changed the speed of the ghosts and the player.
 
 ## Tic Tac Toe
-    * Desarollador: Luis Izauro Zamano Morales
-    * Matricula: A01705457
+    * Developer: Luis Izauro Zamano Morales
+    * Registration number: A01705457
 
-## Modificaciones realizadas
-    * xd1
-    * xd2
+## Modifications made
+    * Centered the figures, resized them.
+    * Changed the color of the figures
+    * Validated that a box cannot be selected by both players.
