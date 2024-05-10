@@ -6,7 +6,7 @@ from freegames import line
 
 
 def grid():
-    """Draw tic-tac-toe grid."""
+    """Draws the tic-tac-toe grid."""
     line(-67, 200, -67, -200)
     line(67, 200, 67, -200)
     line(-200, -67, 200, -67)
@@ -14,13 +14,13 @@ def grid():
 
 
 def drawx(x, y):
-    """Draw X player."""
+    """Draw the X player symbol."""
     line(x, y, x + 133, y + 133)
     line(x, y + 133, x + 133, y)
 
 
 def drawo(x, y):
-    """Draw O player."""
+    """Draw the O player sybol."""
     up()
     goto(x + 67, y + 5)
     down()
@@ -28,7 +28,7 @@ def drawo(x, y):
 
 
 def floor(value):
-    """Round value down to grid with square size 133."""
+    """Round the value down to the nearest grid intersection."""
     return ((value + 200) // 133) * 133 - 200
 
 
@@ -40,14 +40,14 @@ def tap(x, y):
     """Draw X or O in tapped square."""
     x = floor(x)
     y = floor(y)
-    player = state['player']
-    draw = players[player]
+    player = state['player']  # Determine which player's turn it is
+    draw = players[player]  # Get the drawing function for the player
     draw(x, y)
     update()
-    state['player'] = not player
+    state['player'] = not player  # Switch to the next player
 
 
-setup(420, 420, 370, 0)
+setup(420, 420, 370, 0)  # Set up the screen and coordinates
 hideturtle()
 tracer(False)
 grid()
